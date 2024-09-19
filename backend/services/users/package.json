@@ -9,8 +9,8 @@
     "lint:fix": "eslint 'src/**/*.{js,ts}' --fix",
     "format": "prettier --write 'src/**/*.{js,ts,json,md}'",
     "build": "tsc",
-    "drizzle:generate": "drizzle-kit generate",
-    "drizzle:migrate": "drizzle-kit migrate"
+    "d:g": "drizzle-kit generate",
+    "d:m": "drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
