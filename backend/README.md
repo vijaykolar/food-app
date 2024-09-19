@@ -2,10 +2,12 @@ Here’s a comprehensive list of all endpoints for the food delivery system:
 
 ### **User Service**
 
-- **POST** `/api/v1/users/register`
-- **POST** `/api/v1/users/login`
-- **GET** `/api/v1/users/{userId}`
-- **PUT** `/api/v1/users/{userId}`
+- **POST** `/api/v1/users/signup` - signup
+- **POST** `/api/v1/users/login` - login
+- **GET** `/api/v1/users/{userId}` - get current user
+- **PUT** `/api/v1/users/{userId}` - update user
+<!-- - **DELETE** `/api/v1/users/{userId}` - delete user -->
+- **POST** `/api/v1/users/{userId}` - signout user
 
 ### **Restaurant Service**
 
