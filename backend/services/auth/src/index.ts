@@ -12,11 +12,19 @@ app.use(express.json());
 app.use(cors());
 
 console.log('Hello World');
-app.get('/', (req, res) => {
-  res.send('Hello World');
+
+app.get('/api/v1/users', async (req, res) => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+  const todos = await response.json();
+  res.send({ todos: todos.slice(0, 5), count: 4 });
 });
 
-app.use('/api/v1', usersRouter);
+// app.get('/api/v1/users/:id', (req, res) => {
+//   const id = req.params.id;
+//   res.json({ userid: id, count: 10 });
+// });
+
+// app.use('/api/v1', usersRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
