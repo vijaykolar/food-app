@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 import { usersRouter } from './routes/users';
+import { errorHandler } from './middlewares/error-handler';
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -11,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-console.log('Hello World');
+console.log('Hello World!');
 
 app.get('/api/v1/users', async (req, res) => {
   const response = await fetch('https://jsonplaceholder.typicode.com/todos');
@@ -20,6 +21,9 @@ app.get('/api/v1/users', async (req, res) => {
 });
 
 app.use(usersRouter);
+
+// error handler middleware
+// app.use(errorHandler);
 
 // app.get('/api/v1/users/:id', (req, res) => {
 //   const id = req.params.id;
