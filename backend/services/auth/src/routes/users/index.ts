@@ -1,12 +1,14 @@
 // routes/getUsers.ts
 import express from 'express';
-import { getAllUsers } from '../../controllers/users'; // Adjust the import path according to your project structure
+import { currentUserRouter } from './current-user';
+import { signupRouter } from './signup';
+// Adjust the import path according to your project structure
 
 const router = express.Router();
 
 // Define the route for getting all users
-router.get('/users', getAllUsers);
 // router.post('/users/create', createUser);
-// router.get('/users/:id', getUser);
+router.use('/api/v1/users', currentUserRouter);
+router.use('/api/v1/users', signupRouter);
 
 export { router as usersRouter };

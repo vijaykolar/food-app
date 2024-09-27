@@ -16,8 +16,10 @@ console.log('Hello World');
 app.get('/api/v1/users', async (req, res) => {
   const response = await fetch('https://jsonplaceholder.typicode.com/todos');
   const todos = await response.json();
-  res.send({ todos: todos.slice(0, 5), count: 4 });
+  res.send({ todos: todos.slice(0, 3), count: 10 });
 });
+
+app.use(usersRouter);
 
 // app.get('/api/v1/users/:id', (req, res) => {
 //   const id = req.params.id;
